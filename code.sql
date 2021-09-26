@@ -1,0 +1,25 @@
+-- Role: "Aladin"
+-- DROP ROLE "Aladin";
+
+CREATE ROLE "Aladin" WITH
+  LOGIN
+  NOSUPERUSER
+  INHERIT
+  NOCREATEDB
+  NOCREATEROLE
+  NOREPLICATION
+  ENCRYPTED PASSWORD 'SCRAM-SHA-256$4096:qOb+OBDCP1oivRKcgoSMyQ==$fSs5fcKlYkz6wzJeVDnXY60ZPZhvIQKrJLWpMz2LjpI=:nTQZjfYICXZMQ2j77QWyZ1PCpvGsj4idSj06rEQ3RV0=';
+
+
+  -- Database: cars
+
+-- DROP DATABASE cars;
+
+CREATE DATABASE cars
+    WITH 
+    OWNER = "Aladin"
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'English_United Kingdom.1250'
+    LC_CTYPE = 'English_United Kingdom.1250'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1;
